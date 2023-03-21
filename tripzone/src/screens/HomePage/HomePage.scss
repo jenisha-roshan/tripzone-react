@@ -1,0 +1,33 @@
+.homepage-container{
+
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    
+    .left-container{
+        display: flex;
+        flex-direction: column;
+        // background-color: red;
+        width: 65%;
+        height: 100vh;
+        margin-top: 30px;
+        // margin-left: 50px;
+        .left-content{
+            margin-left: 100px;
+        }
+    }
+
+    .right-container{
+        display: flex;
+        flex-direction: column;
+        // background-color: yellow;
+        width: 30%;
+        margin-top: 30px;
+        
+        height: 100vh;
+        .right-content{
+            margin-left: 10px;
+        }
+    }
+
+}

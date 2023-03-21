@@ -1,0 +1,48 @@
+$primary-color: #ffffff;
+$black-color: #000000;
+$primary-bg-color: #d4515c;
+$secondary-color : #ffff;
+$ternary-bg-color : #bd434c;
+$btn-color: #d4525b;
+
+.btn {
+  background-color: $btn-color;
+  color: $primary-color;
+  font-weight: 300;
+  font-size: 16px;
+  padding: 5px;
+  // min-width: 110px;
+  border: 0;
+  text-align: center;
+  cursor: pointer;
+
+  &.small{
+    // padding: 1rem 2rem;
+    width: auto;
+    &:focus {
+      outline: 1px solid $ternary-bg-color;
+      opacity: 1;
+    }
+  }
+ 
+  &.medium{
+    padding: 5px;
+  }
+  
+  &.large{
+    padding: 6px;
+    width: 100%;
+  }
+  .btn-value {
+    color: $primary-color;
+    font-size: 93%;
+    font-weight: 400;
+  }
+
+   &.btn-value-small{
+    color: $primary-color;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0px 2px;
+  }
+}
