@@ -1,5 +1,6 @@
 import "./Header.scss";
 import { useState, useEffect } from "react";
+import HeaderLink from "../HeaderLink/HeaderLink";
 
 function Header() {
   const [sessionTime, setSessionTime] = useState(0);
@@ -74,20 +75,12 @@ function Header() {
       </div>
       <nav>
         <ul>
-          <li className="header-link">
-            <p className="header-small-text">SESSION TIME</p>
-            <p className="header-time-text">
-              {formatTime(minutes)}:{formatTime(seconds)}
-            </p>
-          </li>
-          <li className="header-link">
-            <p className="header-small-text">{currentDateEST} - EST</p>
-            <p className="header-time-text">{currentTimeEST}</p>
-          </li>
-          <li className="header-link">
-            <p className="header-small-text">{currentDateEST} - IST</p>
-            <p className="header-time-text">{currentTimeIST}</p>
-          </li>
+          <HeaderLink
+            text="SESSION TIME"
+            time={`${formatTime(minutes)}:${formatTime(seconds)}`}
+          />
+          <HeaderLink text={`${currentDateEST} - EST`} time={currentTimeEST} />
+          <HeaderLink text={`${currentDateEST} - IST`} time={currentTimeIST} />
         </ul>
       </nav>
       {user && (

@@ -78,40 +78,26 @@ function BookCard({ ticketAmt }) {
         </div>
         <p>{BOOK_NOW.PARA_ONE}</p>
         <div className="btn-group">
-          <Button
-            size="small"
-            value="1 YEAR"
-            onClick={() => handleMembershipDiscount(5)}
-          ></Button>
-          <Button
-            size="small"
-            value="2 YEAR"
-            onClick={() => handleMembershipDiscount(10)}
-          ></Button>
-          <Button
-            size="small"
-            value="3 YEAR"
-            onClick={() => handleMembershipDiscount(15)}
-          ></Button>
+          {[1, 2, 3].map((year) => (
+            <Button
+              key={year}
+              size="small"
+              value={`${year} YEAR`}
+              onClick={() => handleMembershipDiscount(year * 5)}
+            ></Button>
+          ))}
         </div>
 
         <p>{BOOK_NOW.PARA_TWO}</p>
         <div className="btn-group-2">
-          <Button
-            size="small"
-            value="10%"
-            onClick={() => handleTaxAmount(10)}
-          ></Button>
-          <Button
-            size="small"
-            value="20%"
-            onClick={() => handleTaxAmount(20)}
-          ></Button>
-          <Button
-            size="small"
-            value="30%"
-            onClick={() => handleTaxAmount(30)}
-          ></Button>
+          {[10, 20, 30].map((tax) => (
+            <Button
+              key={tax}
+              size="small"
+              value={`${tax}%`}
+              onClick={() => handleTaxAmount(tax)}
+            ></Button>
+          ))}
         </div>
 
         <p className="para-three">{BOOK_NOW.PARA_THREE}</p>

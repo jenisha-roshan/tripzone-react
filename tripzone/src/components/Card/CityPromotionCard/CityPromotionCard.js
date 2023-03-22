@@ -12,7 +12,6 @@ function CityPromotionCard({city,spotData,previousDestination,handlePreviousClic
   };
   return (
     <div className="city-promotion-container">
-    {" "}
     <div className="promotion-card-header">
       <h3>Travelling to {city.cityName.toUpperCase()} ? Know more about it</h3>
       {(showPreviousButton && previousDestination) && (
