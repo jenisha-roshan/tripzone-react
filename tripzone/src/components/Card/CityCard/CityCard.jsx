@@ -10,7 +10,7 @@ function CityCard({ src, heading, subHeading }) {
         className="city-card-img"
         alt="city-img"
       />
-      <p className="city-card-heading">{heading}</p>
+      <h2 className="city-card-heading">{heading}</h2>
       <p className="city-card-subheading">{subHeading}</p>
     </div>
   );

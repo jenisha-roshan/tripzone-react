@@ -3,7 +3,7 @@ import { ErrorConstants } from "../constants/Error.constants";
 
 const { INVALID_USER_MSG } = ErrorConstants.USER;
 
-const loginInUser = async (username, password) => {
+export const loginInUser = async (username, password) => {
   try {
     const user = users.find(u => u.username === username);
     if (!user || user.password !== password) {

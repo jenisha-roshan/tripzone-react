@@ -3,10 +3,14 @@ import Login from '../components/Login/Login';
 import UserService from '../services/LoginService';
 import HomePage from './HomePage/HomePage';
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { UserContext } from '../App';
 
 function LoginPage() {
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
+  const { user, setUser } = useContext(UserContext);
+
   const navigate = useNavigate();
 
   // Function used to handle the login process when the user clicks the login button in the Login component. 

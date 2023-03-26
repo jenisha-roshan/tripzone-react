@@ -23,8 +23,8 @@ const FlightSearch = () => {
   const [selectedFlight, setSelectedFlight] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const {FLIGHT_SEARCH} = AppConstants.COMMONS;
- 
+  const { FLIGHT_SEARCH } = AppConstants.COMMONS;
+
   // Function used to handle when a city is Searched
 
   const handleSearch = async (e) => {
@@ -41,7 +41,6 @@ const FlightSearch = () => {
     }
     setIsLoading(false);
   };
-
 
   // Used to fetch cities data
 
@@ -61,11 +60,10 @@ const FlightSearch = () => {
   const handleDestinationChange = (e) => {
     setDestinationCode(e.target.value);
     setDestination(e.target.value);
-  }
+  };
   return (
     <div>
       <div className="form-container">
-
         {/* FLIGHT SEARCH CONTAINER STARTS  */}
 
         <form className="flight-form" onSubmit={handleSearch}>
@@ -100,13 +98,15 @@ const FlightSearch = () => {
           ></Button>
         </form>
         {/* FLIGHT SEARCH CONTAINER ENDS  */}
-        
+
         {/* AVAILABLE FLIGHT CONTAINER STARTS  */}
 
         {error && <div>Error: {error}</div>}
         {isSubmitted && flightData.length > 0 ? (
           <div className="available-flights-container">
-            <h3 className="available-flights-header">{FLIGHT_SEARCH.AVAILABLE_FLIGHTS_HEADER}</h3>
+            <h3 className="available-flights-header">
+              {FLIGHT_SEARCH.AVAILABLE_FLIGHTS_HEADER}
+            </h3>
             <div>
               {flightData.map((flight) => (
                 <FlightCard
@@ -139,7 +139,10 @@ const FlightSearch = () => {
         {/* BOOK_NOW CONTAINER ENDS  */}
 
         {flightData.length > 0 && showBookCard && (
-          <BookCard ticketAmt={`$ ${selectedFlight.price}`} />
+          <BookCard
+            key={flightData.sourceCode}
+            ticketAmt={`$ ${selectedFlight.price}`}
+          />
         )}
 
         {/* BOOK_NOW CONTAINER ENDS  */}

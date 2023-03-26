@@ -17,7 +17,6 @@ $btn-color: #d4525b;
   cursor: pointer;
 
   &.small{
-    // padding: 1rem 2rem;
     width: auto;
     &:focus {
       outline: 1px solid $ternary-bg-color;

@@ -22,7 +22,9 @@ function BookCard({ ticketAmt }) {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       const userObj = JSON.parse(storedUser);
-      if (userObj.prime === "true") {
+      console.log("INSIDEEEEE");
+      console.log(userObj.prime);
+      if (userObj.prime === true) {
         setPrimeUser(true);
       }
     }
@@ -31,7 +33,6 @@ function BookCard({ ticketAmt }) {
   // Function to set membership discount
 
   const handleMembershipDiscount = (discount) => {
-    // setMembershipDiscount(membershipDiscount + discount);
     setMembershipDiscount(10 + discount);
   };
 
