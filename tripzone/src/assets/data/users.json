@@ -1,0 +1,26 @@
+[
+    {
+        "username":"jim",
+        "password":"jim123",
+        "prime":true,
+        "name":"Jim Halpert"
+    },
+    {
+        "username":"michael",
+        "password":"michael123",
+        "prime":false,
+        "name":"Michael"
+    },
+    {
+        "username":"pam",
+        "password":"pam123",
+        "prime":false,
+        "name":"Pam Beesly"
+    },
+    {
+        "username":"john",
+        "password":"john123",
+        "prime":true,
+        "name": "John Snow"
+    }
+]

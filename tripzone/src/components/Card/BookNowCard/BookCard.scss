@@ -1,0 +1,64 @@
+$blue-bg : #94befa;
+
+.book-card-container {
+  display: flex;
+  flex-direction: row;
+  width: 340px;
+  height: 450px;
+  gap: 10px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 400;
+  .book-card-content {
+    background-color: $blue-bg;
+    padding: 20px;
+    margin: -27px 0px 27px -18px;
+    .book-card-header{
+      display: flex;
+      width: 340px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .prime-logo{
+
+        width: 14%;
+        height: 10%;        
+      }
+    }
+
+    .book-card-heading {
+      font-size: 20px;
+    }
+
+    .book-card-heading {
+      font-weight: 600;
+    }
+
+    .city-card-subheading {
+      font-size: 40px;
+      font-weight: 400;
+    }
+    .btn-group,
+    .btn-group-2 {
+      padding: 10px 0px 20px 0px;
+    }
+    .amount-section {
+      display: flex;
+      padding: 15px 0px;
+      width: 340px;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .font-bold {
+      font-weight: 600;
+    }
+
+    .para-three{
+      padding: 0px 0px 20px 0px;
+    }
+  }
+}
+.none{
+  display: none;
+}

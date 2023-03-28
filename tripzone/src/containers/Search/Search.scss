@@ -1,0 +1,77 @@
+$light-blue-bg : #e8ecef;
+$yellow-bg : #fae17e;
+
+.light-blue-container{
+    background-color: $light-blue-bg;
+    text-align: left;
+    width: 860px;
+    padding: 20px;
+
+    .search-text-section{
+
+        width: 560px;
+        margin-top: 17px;
+        .search-header{
+            font-size: 20px;
+    
+        }
+        .search-sub-text{
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+    }
+
+   
+}
+
+.city-promotion-container{
+    background-color: $yellow-bg;
+    text-align: left;
+    width: 860px;
+    padding: 20px;
+    margin-top: 20px;
+    .promotion-card-header{
+        display: flex;
+        width: 800px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .weather-text{
+        font-size: 35px;
+        font-weight: 300;
+        margin: 10px 0px;
+    }
+    .description-text{
+        font-size: 13px;
+        font-weight: 500;
+    }
+}
+
+
+.global-promotion-card-container{
+
+    display: flex;
+    width: 830px;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.search-field{
+
+    width: 530px;
+    height: 35px;
+    border:0px solid;
+}
+
+input[type="text"] {
+    padding: 10px;
+  }
+
+.search-field::placeholder { 
+    opacity: 0.5; 
+    font-size: 10px;
+    font-weight: 500;
+    text-indent: 10px;
+
+  }

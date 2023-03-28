@@ -1,0 +1,52 @@
+$bg-color: #94befa;
+$secondary-color: #c4e691;
+
+.form-container {
+  background-color: $bg-color;
+  width: 375px;
+  height: 245px;
+  padding: 1px 20px;
+  text-align: left;
+  .flight-form {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    .label {
+      font-size: 12px;
+      margin-top: 8px;
+      margin-bottom: 5px;
+    }
+    .form-input {
+      width: 336px;
+      height: 35px;
+      border:0px solid;
+      font-size: 11px;
+      font-weight: 400;
+      padding: 10px;
+    }
+  
+    
+    button {
+      margin-top: 15px;
+    }
+  }
+
+  select option {
+    margin-left: 40px;
+  }
+
+  .available-flights-container {
+    background-color: $secondary-color;
+    width: 375px;
+    display: flex;
+    flex-direction: column;
+    margin: 50px -18px;
+    .available-flights-header {
+      padding: 14px 0px 1px 18px;
+    }
+  }
+}
+
+.margin-10 {
+  margin: 10px;
+}
