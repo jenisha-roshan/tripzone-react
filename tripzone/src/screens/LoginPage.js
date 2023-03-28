@@ -7,7 +7,6 @@ import { useContext } from 'react';
 import { UserContext } from '../App';
 
 function LoginPage() {
-  // const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
   const { user, setUser } = useContext(UserContext);
 

@@ -110,7 +110,7 @@ const FlightSearch = () => {
             <div>
               {flightData.map((flight) => (
                 <FlightCard
-                  key={flight.flightNumber}
+                  key={flight.flightName}
                   image={logo}
                   title={flight.flightName}
                   source={flight.src}

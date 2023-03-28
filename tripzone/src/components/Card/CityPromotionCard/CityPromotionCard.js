@@ -26,18 +26,16 @@ function CityPromotionCard({city,spotData,previousDestination,handlePreviousClic
     <p className="description-text">{city.description}</p>
     
     {spotData &&
-      [spotData].map((spot) => (
         <div className="global-promotion-card-container">
           <CityCard
-            key={spot.place}
-            src={spot.image}
-            heading={spot.place}
-            subHeading={spot.city}
+            key={spotData.place}
+            src={spotData.image}
+            heading={spotData.place}
+            subHeading={spotData.city}
           />
         </div>
-      ))}
-  </div>
-  );
-}
+    }
+    </div>
+)}
 
 export default CityPromotionCard;

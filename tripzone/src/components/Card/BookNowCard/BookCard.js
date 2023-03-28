@@ -1,7 +1,7 @@
 import "./BookCard.scss";
 import { AppConstants } from "../../../constants/App.constants";
 import Button from "../../Button/Button";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import prime from "../../../assets/prime.png";
 import classNames from "classnames";
 import { useNavigate } from "react-router-dom";
@@ -13,7 +13,7 @@ function BookCard({ ticketAmt }) {
   const [membershipDiscount, setMembershipDiscount] = useState(10);
   const [taxAmount, setTaxAmount] = useState(5);
   const [primeUser, setPrimeUser] = useState(false);
-  const ticketAmtNum = Number(ticketAmt.replace(/[^0-9.-]+/g, ""));
+  const ticketAmtNum = useMemo(() => Number(ticketAmt.replace(/[^0-9.-]+/g, "")), [ticketAmt]);
   const navigate = useNavigate();
 
   // Used to set if user is prime or not
@@ -22,7 +22,6 @@ function BookCard({ ticketAmt }) {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       const userObj = JSON.parse(storedUser);
-      console.log("INSIDEEEEE");
       console.log(userObj.prime);
       if (userObj.prime === true) {
         setPrimeUser(true);
@@ -32,18 +31,28 @@ function BookCard({ ticketAmt }) {
 
   // Function to set membership discount
 
-  const handleMembershipDiscount = (discount) => {
+  const handleMembershipDiscount = useCallback((discount) => {
+    console.log("RENDERING handleMembershipDiscount");
     setMembershipDiscount(10 + discount);
-  };
+  }, []);
+
+  // const handleMembershipDiscount = (discount) => {
+  //   setMembershipDiscount(10 + discount);
+  // }
 
   // Function to calculate Tax Amount based on percentage provided
 
-  const handleTaxAmount = (percentage) => {
+  const handleTaxAmount = useCallback((percentage) => {
     const newTaxAmount = 5 + (ticketAmtNum * percentage) / 100;
     setTaxAmount(newTaxAmount);
-  };
+  }, [ticketAmtNum]);
 
-  const totalPrice = ticketAmtNum - membershipDiscount + taxAmount;
+  // const handleTaxAmount = (percentage) => {
+  //   const newTaxAmount = 5 + (ticketAmtNum * percentage) / 100;
+  //   setTaxAmount(newTaxAmount);
+  // }
+
+  const totalPrice = useMemo(() => ticketAmtNum - membershipDiscount + taxAmount, [ticketAmtNum, membershipDiscount, taxAmount]);
 
   // Function to navigate to checkout page
 
